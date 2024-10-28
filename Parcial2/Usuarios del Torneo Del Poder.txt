@@ -1,0 +1,5 @@
+Usuarios, correos y contraseñas de los usuario del torneo del poder
+Axel yeray, axelepego@gmail.com: 123
+jose, pepe@gmail.com:    pepe
+Gilberto, lepe_79@hotmail.com: 060479gil
+jesus Alvarado, papadio@gmail.com
