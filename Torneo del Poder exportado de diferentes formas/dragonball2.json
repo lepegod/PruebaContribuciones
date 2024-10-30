@@ -1,0 +1,40 @@
+[
+{"type":"header","version":"5.2.0","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"dragonball2"},
+{"type":"table","name":"characters","database":"dragonball2","data":
+[
+{"id":"2","user_id":"1","name":"axel yeray","race":"Saiyan","level":"2","strength":"54","speed":"51","endurance":"51","experience":"0","avatar":"Avatar1.jpg"},
+{"id":"3","user_id":"2","name":"pepe","race":"Freezer Race","level":"33","strength":"138","speed":"154","endurance":"146","experience":"0","avatar":"Avatar10.jpg"},
+{"id":"4","user_id":"3","name":"Gilberto","race":"Saiyan","level":"122","strength":"422","speed":"410","endurance":"407","experience":"0","avatar":"Avatar6.jpg"},
+{"id":"5","user_id":"4","name":"jesus","race":"Namek","level":"93","strength":"333","speed":"305","endurance":"318","experience":"0","avatar":"Avatar3.jpg"}
+]
+}
+,{"type":"table","name":"character_transformations","database":"dragonball2","data":
+[
+
+]
+}
+,{"type":"table","name":"tournaments","database":"dragonball2","data":
+[
+
+]
+}
+,{"type":"table","name":"tournament_participants","database":"dragonball2","data":
+[
+
+]
+}
+,{"type":"table","name":"transformations","database":"dragonball2","data":
+[
+
+]
+}
+,{"type":"table","name":"users","database":"dragonball2","data":
+[
+{"id":"1","name":"axel yeray","email":"axelepegon@gmail.com","password":"$2y$10$dIABi99Oa9OxeIU2jL0RaeJSK2fcxPoCKI26Kegikk4o2sI2tUVKS","avatar":"Avatar4.jpg"},
+{"id":"2","name":"jose","email":"pepe@gmail.com","password":"$2y$10$s\/nuTIRDQvW61h4y57nNYuwRx7WU.6fqIW85k3v9ygIA90Cc\/VGhG","avatar":"Avatar2.jpg"},
+{"id":"3","name":"Gilberto","email":"lepe_79@hotmail.com","password":"$2y$10$tn9y.Ib\/KAoBdVOSGnjeJOcHYwwlucDEISb1QzJltWbWE2YZyPlRG","avatar":"Avatar9.jpg"},
+{"id":"4","name":"jesus alvarado","email":"papadio@gmail.com","password":"$2y$10$EvwtMnFhX1zIjaWkC\/qLxeuPrVy\/\/ehNy\/ti0ihdxZQLff0\/qkjau","avatar":"Avatar9.jpg"}
+]
+}
+]

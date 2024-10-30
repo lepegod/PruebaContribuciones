@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 5.2.0
+- https://www.phpmyadmin.net
+-
+- Servidor: 127.0.0.1
+- Tiempo de generación: 28-10-2024 a las 17:51:47
+- Versión del servidor: 10.4.27-MariaDB
+- Versión de PHP: 8.2.0
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="dragonball2" collation="utf8mb4_general_ci" charset="utf8mb4">
+            <pma:table name="characters">
+                CREATE TABLE `characters` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `user_id` int(11) DEFAULT NULL,
+                  `name` varchar(50) DEFAULT NULL,
+                  `race` enum(&#039;Saiyan&#039;,&#039;Namek&#039;,&#039;Humano&#039;,&#039;Freezer Race&#039;,&#039;Majin&#039;) DEFAULT NULL,
+                  `level` int(11) DEFAULT 1,
+                  `strength` int(11) DEFAULT 50,
+                  `speed` int(11) DEFAULT 50,
+                  `endurance` int(11) DEFAULT 50,
+                  `experience` int(11) DEFAULT 0,
+                  `avatar` varchar(255) DEFAULT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `user_id` (`user_id`),
+                  CONSTRAINT `characters_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+            </pma:table>
+            <pma:table name="character_transformations">
+                CREATE TABLE `character_transformations` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `character_id` int(11) DEFAULT NULL,
+                  `transformation_id` int(11) DEFAULT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `character_id` (`character_id`),
+                  KEY `transformation_id` (`transformation_id`),
+                  CONSTRAINT `character_transformations_ibfk_1` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`),
+                  CONSTRAINT `character_transformations_ibfk_2` FOREIGN KEY (`transformation_id`) REFERENCES `transformations` (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+            </pma:table>
+            <pma:table name="tournaments">
+                CREATE TABLE `tournaments` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `name` varchar(100) DEFAULT NULL,
+                  `date` date DEFAULT NULL,
+                  `winner_id` int(11) DEFAULT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `winner_id` (`winner_id`),
+                  CONSTRAINT `tournaments_ibfk_1` FOREIGN KEY (`winner_id`) REFERENCES `characters` (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+            </pma:table>
+            <pma:table name="tournament_participants">
+                CREATE TABLE `tournament_participants` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `tournament_id` int(11) DEFAULT NULL,
+                  `character_id` int(11) DEFAULT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `tournament_id` (`tournament_id`),
+                  KEY `character_id` (`character_id`),
+                  CONSTRAINT `tournament_participants_ibfk_1` FOREIGN KEY (`tournament_id`) REFERENCES `tournaments` (`id`),
+                  CONSTRAINT `tournament_participants_ibfk_2` FOREIGN KEY (`character_id`) REFERENCES `characters` (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+            </pma:table>
+            <pma:table name="transformations">
+                CREATE TABLE `transformations` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `name` varchar(50) DEFAULT NULL,
+                  `level_required` int(11) DEFAULT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+            </pma:table>
+            <pma:table name="users">
+                CREATE TABLE `users` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `name` varchar(100) NOT NULL,
+                  `email` varchar(255) NOT NULL,
+                  `password` varchar(100) NOT NULL,
+                  `avatar` varchar(50) NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Base de datos: 'dragonball2'
+    -->
+    <database name="dragonball2">
+        <!-- Tabla characters -->
+        <table name="characters">
+            <column name="id">2</column>
+            <column name="user_id">1</column>
+            <column name="name">axel yeray</column>
+            <column name="race">Saiyan</column>
+            <column name="level">2</column>
+            <column name="strength">54</column>
+            <column name="speed">51</column>
+            <column name="endurance">51</column>
+            <column name="experience">0</column>
+            <column name="avatar">Avatar1.jpg</column>
+        </table>
+        <table name="characters">
+            <column name="id">3</column>
+            <column name="user_id">2</column>
+            <column name="name">pepe</column>
+            <column name="race">Freezer Race</column>
+            <column name="level">33</column>
+            <column name="strength">138</column>
+            <column name="speed">154</column>
+            <column name="endurance">146</column>
+            <column name="experience">0</column>
+            <column name="avatar">Avatar10.jpg</column>
+        </table>
+        <table name="characters">
+            <column name="id">4</column>
+            <column name="user_id">3</column>
+            <column name="name">Gilberto</column>
+            <column name="race">Saiyan</column>
+            <column name="level">122</column>
+            <column name="strength">422</column>
+            <column name="speed">410</column>
+            <column name="endurance">407</column>
+            <column name="experience">0</column>
+            <column name="avatar">Avatar6.jpg</column>
+        </table>
+        <table name="characters">
+            <column name="id">5</column>
+            <column name="user_id">4</column>
+            <column name="name">jesus</column>
+            <column name="race">Namek</column>
+            <column name="level">93</column>
+            <column name="strength">333</column>
+            <column name="speed">305</column>
+            <column name="endurance">318</column>
+            <column name="experience">0</column>
+            <column name="avatar">Avatar3.jpg</column>
+        </table>
+        <!-- Tabla character_transformations -->
+        <!-- Tabla tournaments -->
+        <!-- Tabla tournament_participants -->
+        <!-- Tabla transformations -->
+        <!-- Tabla users -->
+        <table name="users">
+            <column name="id">1</column>
+            <column name="name">axel yeray</column>
+            <column name="email">axelepegon@gmail.com</column>
+            <column name="password">$2y$10$dIABi99Oa9OxeIU2jL0RaeJSK2fcxPoCKI26Kegikk4o2sI2tUVKS</column>
+            <column name="avatar">Avatar4.jpg</column>
+        </table>
+        <table name="users">
+            <column name="id">2</column>
+            <column name="name">jose</column>
+            <column name="email">pepe@gmail.com</column>
+            <column name="password">$2y$10$s/nuTIRDQvW61h4y57nNYuwRx7WU.6fqIW85k3v9ygIA90Cc/VGhG</column>
+            <column name="avatar">Avatar2.jpg</column>
+        </table>
+        <table name="users">
+            <column name="id">3</column>
+            <column name="name">Gilberto</column>
+            <column name="email">lepe_79@hotmail.com</column>
+            <column name="password">$2y$10$tn9y.Ib/KAoBdVOSGnjeJOcHYwwlucDEISb1QzJltWbWE2YZyPlRG</column>
+            <column name="avatar">Avatar9.jpg</column>
+        </table>
+        <table name="users">
+            <column name="id">4</column>
+            <column name="name">jesus alvarado</column>
+            <column name="email">papadio@gmail.com</column>
+            <column name="password">$2y$10$EvwtMnFhX1zIjaWkC/qLxeuPrVy//ehNy/ti0ihdxZQLff0/qkjau</column>
+            <column name="avatar">Avatar9.jpg</column>
+        </table>
+    </database>
+</pma_xml_export>
